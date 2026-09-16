@@ -1,0 +1,1398 @@
+[2026-09-15 15:00:10,020] INFO Kafka Connect worker initializing ... (org.apache.kafka.connect.cli.AbstractConnectCli:114)
+[2026-09-15 15:00:10,027] INFO WorkerInfo values: 
+	jvm.args = -Xmx256M, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+ExplicitGCInvokesConcurrent, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=C:\kafka/logs, -Dlog4j2.configurationFile=C:\kafka/config/connect-log4j2.yaml
+	jvm.spec = Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 21.0.9, 21.0.9+7-LTS-338
+	jvm.classpath = C:\kafka\libs\activation-1.1.1.jar;C:\kafka\libs\aopalliance-repackaged-3.0.6.jar;C:\kafka\libs\argparse4j-0.7.0.jar;C:\kafka\libs\caffeine-3.2.0.jar;C:\kafka\libs\classgraph-4.8.179.jar;C:\kafka\libs\commons-beanutils-1.11.0.jar;C:\kafka\libs\commons-collections-3.2.2.jar;C:\kafka\libs\commons-digester-2.1.jar;C:\kafka\libs\commons-logging-1.3.5.jar;C:\kafka\libs\commons-validator-1.10.1.jar;C:\kafka\libs\connect-api-4.3.1.jar;C:\kafka\libs\connect-basic-auth-extension-4.3.1.jar;C:\kafka\libs\connect-file-4.3.1.jar;C:\kafka\libs\connect-json-4.3.1.jar;C:\kafka\libs\connect-mirror-4.3.1.jar;C:\kafka\libs\connect-mirror-client-4.3.1.jar;C:\kafka\libs\connect-runtime-4.3.1.jar;C:\kafka\libs\connect-transforms-4.3.1.jar;C:\kafka\libs\hash4j-0.22.0.jar;C:\kafka\libs\HdrHistogram-2.2.2.jar;C:\kafka\libs\hk2-api-3.0.6.jar;C:\kafka\libs\hk2-locator-3.0.6.jar;C:\kafka\libs\hk2-utils-3.0.6.jar;C:\kafka\libs\jackson-annotations-2.21.jar;C:\kafka\libs\jackson-core-2.21.2.jar;C:\kafka\libs\jackson-databind-2.21.2.jar;C:\kafka\libs\jackson-dataformat-csv-2.21.2.jar;C:\kafka\libs\jackson-dataformat-yaml-2.21.2.jar;C:\kafka\libs\jackson-datatype-jdk8-2.21.2.jar;C:\kafka\libs\jackson-jakarta-rs-base-2.21.2.jar;C:\kafka\libs\jackson-jakarta-rs-json-provider-2.21.2.jar;C:\kafka\libs\jackson-module-blackbird-2.21.2.jar;C:\kafka\libs\jackson-module-jakarta-xmlbind-annotations-2.21.2.jar;C:\kafka\libs\jakarta.activation-2.0.1.jar;C:\kafka\libs\jakarta.activation-api-2.1.0.jar;C:\kafka\libs\jakarta.annotation-api-2.1.1.jar;C:\kafka\libs\jakarta.inject-api-2.0.1.jar;C:\kafka\libs\jakarta.servlet-api-6.0.0.jar;C:\kafka\libs\jakarta.validation-api-3.0.2.jar;C:\kafka\libs\jakarta.ws.rs-api-3.1.0.jar;C:\kafka\libs\jakarta.xml.bind-api-3.0.1.jar;C:\kafka\libs\javassist-3.30.2-GA.jar;C:\kafka\libs\javax.activation-api-1.2.0.jar;C:\kafka\libs\javax.annotation-api-1.3.2.jar;C:\kafka\libs\jaxb-api-2.3.1.jar;C:\kafka\libs\jersey-client-3.1.10.jar;C:\kafka\libs\jersey-common-3.1.10.jar;C:\kafka\libs\jersey-container-servlet-3.1.10.jar;C:\kafka\libs\jersey-container-servlet-core-3.1.10.jar;C:\kafka\libs\jersey-hk2-3.1.10.jar;C:\kafka\libs\jersey-server-3.1.10.jar;C:\kafka\libs\jetty-alpn-client-12.0.34.jar;C:\kafka\libs\jetty-client-12.0.34.jar;C:\kafka\libs\jetty-ee10-servlet-12.0.34.jar;C:\kafka\libs\jetty-ee10-servlets-12.0.34.jar;C:\kafka\libs\jetty-http-12.0.34.jar;C:\kafka\libs\jetty-io-12.0.34.jar;C:\kafka\libs\jetty-security-12.0.34.jar;C:\kafka\libs\jetty-server-12.0.34.jar;C:\kafka\libs\jetty-session-12.0.34.jar;C:\kafka\libs\jetty-util-12.0.34.jar;C:\kafka\libs\jline-3.30.4.jar;C:\kafka\libs\jopt-simple-5.0.4.jar;C:\kafka\libs\jose4j-0.9.6.jar;C:\kafka\libs\jspecify-1.0.0.jar;C:\kafka\libs\kafka-clients-4.3.1.jar;C:\kafka\libs\kafka-coordinator-common-4.3.1.jar;C:\kafka\libs\kafka-group-coordinator-4.3.1.jar;C:\kafka\libs\kafka-group-coordinator-api-4.3.1.jar;C:\kafka\libs\kafka-metadata-4.3.1.jar;C:\kafka\libs\kafka-raft-4.3.1.jar;C:\kafka\libs\kafka-server-4.3.1.jar;C:\kafka\libs\kafka-server-common-4.3.1.jar;C:\kafka\libs\kafka-share-coordinator-4.3.1.jar;C:\kafka\libs\kafka-shell-4.3.1.jar;C:\kafka\libs\kafka-storage-4.3.1.jar;C:\kafka\libs\kafka-storage-api-4.3.1.jar;C:\kafka\libs\kafka-streams-4.3.1.jar;C:\kafka\libs\kafka-streams-examples-4.3.1.jar;C:\kafka\libs\kafka-streams-scala_2.13-4.3.1.jar;C:\kafka\libs\kafka-streams-test-utils-4.3.1.jar;C:\kafka\libs\kafka-tools-4.3.1.jar;C:\kafka\libs\kafka-tools-api-4.3.1.jar;C:\kafka\libs\kafka-transaction-coordinator-4.3.1.jar;C:\kafka\libs\kafka_2.13-4.3.1.jar;C:\kafka\libs\log4j-1.2-api-2.25.4.jar;C:\kafka\libs\log4j-api-2.25.4.jar;C:\kafka\libs\log4j-core-2.25.4.jar;C:\kafka\libs\log4j-slf4j-impl-2.25.4.jar;C:\kafka\libs\lz4-java-1.10.2.jar;C:\kafka\libs\maven-artifact-3.9.15.jar;C:\kafka\libs\metrics-core-2.2.0.jar;C:\kafka\libs\opentelemetry-proto-1.3.2-alpha.jar;C:\kafka\libs\osgi-resource-locator-1.0.3.jar;C:\kafka\libs\pcollections-4.0.2.jar;C:\kafka\libs\plexus-utils-3.6.1.jar;C:\kafka\libs\protobuf-java-3.25.5.jar;C:\kafka\libs\re2j-1.8.jar;C:\kafka\libs\rocksdbjni-10.1.3.jar;C:\kafka\libs\scala-library-2.13.18.jar;C:\kafka\libs\scala-logging_2.13-3.9.6.jar;C:\kafka\libs\scala-reflect-2.13.18.jar;C:\kafka\libs\slf4j-api-1.7.36.jar;C:\kafka\libs\snakeyaml-2.5.jar;C:\kafka\libs\snappy-java-1.1.10.7.jar;C:\kafka\libs\swagger-annotations-2.2.39.jar;C:\kafka\libs\trogdor-4.3.1.jar;C:\kafka\libs\zstd-jni-1.5.6-10.jar
+	os.spec = Windows 11, amd64, 10.0
+	os.vcpus = 12
+ (org.apache.kafka.connect.runtime.WorkerInfo:72)
+[2026-09-15 15:00:10,029] INFO Scanning for plugin classes. This might take a moment ... (org.apache.kafka.connect.cli.AbstractConnectCli:120)
+[2026-09-15 15:00:10,059] INFO Loading plugin from: classpath (org.apache.kafka.connect.runtime.isolation.PluginScanner:75)
+[2026-09-15 15:00:10,157] INFO Registered loader: jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 (org.apache.kafka.connect.runtime.isolation.PluginScanner:80)
+[2026-09-15 15:00:10,158] INFO Scanning plugins with ServiceLoaderScanner took 100 ms (org.apache.kafka.connect.runtime.isolation.PluginScanner:70)
+[2026-09-15 15:00:10,160] INFO Loading plugin from: classpath (org.apache.kafka.connect.runtime.isolation.PluginScanner:75)
+[2026-09-15 15:00:13,191] INFO Registered loader: jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 (org.apache.kafka.connect.runtime.isolation.PluginScanner:80)
+[2026-09-15 15:00:13,193] INFO Scanning plugins with ReflectionScanner took 3033 ms (org.apache.kafka.connect.runtime.isolation.PluginScanner:70)
+[2026-09-15 15:00:13,199] WARN All plugins have ServiceLoader manifests, consider reconfiguring plugin.discovery=service_load (org.apache.kafka.connect.runtime.isolation.Plugins:108)
+[2026-09-15 15:00:13,202] INFO Added plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,203] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,203] INFO Added plugin 'org.apache.kafka.connect.transforms.Filter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,204] INFO Added plugin 'org.apache.kafka.connect.connector.policy.AllowlistConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,205] INFO Added plugin 'org.apache.kafka.connect.mirror.MirrorSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,205] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,206] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,207] INFO Added plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,207] INFO Added plugin 'org.apache.kafka.connect.connector.policy.AllConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,208] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,208] INFO Added plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,209] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,210] INFO Added plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,211] INFO Added plugin 'org.apache.kafka.connect.connector.policy.PrincipalConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,211] INFO Added plugin 'org.apache.kafka.connect.transforms.DropHeaders' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,212] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,213] INFO Added plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,213] INFO Added plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,214] INFO Added plugin 'org.apache.kafka.common.config.provider.FileConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,214] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertHeader' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,215] INFO Added plugin 'org.apache.kafka.common.config.provider.DirectoryConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,215] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,216] INFO Added plugin 'org.apache.kafka.connect.mirror.MirrorCheckpointConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,216] INFO Added plugin 'org.apache.kafka.connect.transforms.HeaderFrom$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,217] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,217] INFO Added plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,218] INFO Added plugin 'org.apache.kafka.connect.transforms.predicates.TopicNameMatches' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,218] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,219] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,219] INFO Added plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,220] INFO Added plugin 'org.apache.kafka.connect.transforms.HeaderFrom$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,220] INFO Added plugin 'org.apache.kafka.connect.transforms.predicates.HasHeaderKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,221] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,221] INFO Added plugin 'org.apache.kafka.connect.transforms.predicates.RecordIsTombstone' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,222] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,222] INFO Added plugin 'org.apache.kafka.common.config.provider.EnvVarConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,223] INFO Added plugin 'org.apache.kafka.connect.connector.policy.NoneConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,223] INFO Added plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,224] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,224] INFO Added plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,224] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,225] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,225] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,226] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,226] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,227] INFO Added plugin 'org.apache.kafka.connect.converters.BooleanConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,227] INFO Added plugin 'org.apache.kafka.connect.rest.basic.auth.extension.BasicAuthSecurityRestExtension' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,229] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,229] INFO Added plugin 'org.apache.kafka.connect.mirror.MirrorHeartbeatConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,230] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,231] INFO Added plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,231] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:199)
+[2026-09-15 15:00:13,234] INFO Added alias 'RecordIsTombstone' to plugin 'org.apache.kafka.connect.transforms.predicates.RecordIsTombstone' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,235] INFO Added alias 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,235] INFO Added alias 'FileStreamSource' to plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,236] INFO Added alias 'EnvVar' to plugin 'org.apache.kafka.common.config.provider.EnvVarConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,236] INFO Added alias 'EnvVarConfigProvider' to plugin 'org.apache.kafka.common.config.provider.EnvVarConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,237] INFO Added alias 'MirrorCheckpointConnector' to plugin 'org.apache.kafka.connect.mirror.MirrorCheckpointConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,238] INFO Added alias 'Boolean' to plugin 'org.apache.kafka.connect.converters.BooleanConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,239] INFO Added alias 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,239] INFO Added alias 'StringConverter' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,239] INFO Added alias 'IntegerConverter' to plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,240] INFO Added alias 'Float' to plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,241] INFO Added alias 'LongConverter' to plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,241] INFO Added alias 'DropHeaders' to plugin 'org.apache.kafka.connect.transforms.DropHeaders' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,242] INFO Added alias 'SimpleHeaderConverter' to plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,242] INFO Added alias 'FileStreamSinkConnector' to plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,243] INFO Added alias 'DirectoryConfigProvider' to plugin 'org.apache.kafka.common.config.provider.DirectoryConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,243] INFO Added alias 'ShortConverter' to plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,244] INFO Added alias 'AllowlistConnectorClientConfigOverridePolicy' to plugin 'org.apache.kafka.connect.connector.policy.AllowlistConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,244] INFO Added alias 'BasicAuthSecurityRestExtension' to plugin 'org.apache.kafka.connect.rest.basic.auth.extension.BasicAuthSecurityRestExtension' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,245] INFO Added alias 'Simple' to plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,246] INFO Added alias 'AllConnectorClientConfigOverridePolicy' to plugin 'org.apache.kafka.connect.connector.policy.AllConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,246] INFO Added alias 'MirrorSource' to plugin 'org.apache.kafka.connect.mirror.MirrorSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,247] INFO Added alias 'Directory' to plugin 'org.apache.kafka.common.config.provider.DirectoryConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,248] INFO Added alias 'MirrorHeartbeat' to plugin 'org.apache.kafka.connect.mirror.MirrorHeartbeatConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,248] INFO Added alias 'FileStreamSourceConnector' to plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,249] INFO Added alias 'BooleanConverter' to plugin 'org.apache.kafka.connect.converters.BooleanConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,249] INFO Added alias 'HasHeaderKey' to plugin 'org.apache.kafka.connect.transforms.predicates.HasHeaderKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,250] INFO Added alias 'MirrorCheckpoint' to plugin 'org.apache.kafka.connect.mirror.MirrorCheckpointConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,251] INFO Added alias 'None' to plugin 'org.apache.kafka.connect.connector.policy.NoneConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,251] INFO Added alias 'TimestampRouter' to plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,252] INFO Added alias 'Principal' to plugin 'org.apache.kafka.connect.connector.policy.PrincipalConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,252] INFO Added alias 'All' to plugin 'org.apache.kafka.connect.connector.policy.AllConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,253] INFO Added alias 'JsonConverter' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,254] INFO Added alias 'RegexRouter' to plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,254] INFO Added alias 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,254] INFO Added alias 'NoneConnectorClientConfigOverridePolicy' to plugin 'org.apache.kafka.connect.connector.policy.NoneConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,256] INFO Added alias 'Short' to plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,257] INFO Added alias 'Double' to plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,257] INFO Added alias 'FileConfigProvider' to plugin 'org.apache.kafka.common.config.provider.FileConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,258] INFO Added alias 'Long' to plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,258] INFO Added alias 'File' to plugin 'org.apache.kafka.common.config.provider.FileConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,259] INFO Added alias 'FloatConverter' to plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,259] INFO Added alias 'ByteArrayConverter' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,259] INFO Added alias 'FileStreamSink' to plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,260] INFO Added alias 'DoubleConverter' to plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,260] INFO Added alias 'TopicNameMatches' to plugin 'org.apache.kafka.connect.transforms.predicates.TopicNameMatches' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,261] INFO Added alias 'MirrorHeartbeatConnector' to plugin 'org.apache.kafka.connect.mirror.MirrorHeartbeatConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,261] INFO Added alias 'InsertHeader' to plugin 'org.apache.kafka.connect.transforms.InsertHeader' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,262] INFO Added alias 'MirrorSourceConnector' to plugin 'org.apache.kafka.connect.mirror.MirrorSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,262] INFO Added alias 'PrincipalConnectorClientConfigOverridePolicy' to plugin 'org.apache.kafka.connect.connector.policy.PrincipalConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,263] INFO Added alias 'ValueToKey' to plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,263] INFO Added alias 'Allowlist' to plugin 'org.apache.kafka.connect.connector.policy.AllowlistConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,264] INFO Added alias 'Integer' to plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,264] INFO Added alias 'Filter' to plugin 'org.apache.kafka.connect.transforms.Filter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:203)
+[2026-09-15 15:00:13,348] INFO DistributedConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	admin.listeners = null
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	config.providers = []
+	config.storage.replication.factor = 1
+	config.storage.topic = connect-configs
+	connect.protocol = sessioned
+	connections.max.idle.ms = 540000
+	connector.client.config.override.policy = All
+	exactly.once.source.support = disabled
+	group.id = connect-cluster
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	header.converter.plugin.version = null
+	heartbeat.interval.ms = 3000
+	inter.worker.key.generation.algorithm = HmacSHA256
+	inter.worker.key.size = null
+	inter.worker.key.ttl.ms = 3600000
+	inter.worker.signature.algorithm = HmacSHA256
+	inter.worker.verification.algorithms = [HmacSHA256]
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter.plugin.version = null
+	listeners = [http://:8083]
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 10000
+	offset.flush.timeout.ms = 5000
+	offset.storage.partitions = 25
+	offset.storage.replication.factor = 1
+	offset.storage.topic = connect-offsets
+	plugin.discovery = hybrid_warn
+	plugin.path = null
+	rebalance.timeout.ms = 60000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 40000
+	response.http.headers.config = 
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	scheduled.rebalance.max.delay.ms = 300000
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	status.storage.partitions = 5
+	status.storage.replication.factor = 1
+	status.storage.topic = connect-status
+	task.shutdown.graceful.timeout.ms = 5000
+	topic.creation.enable = true
+	topic.tracking.allow.reset = true
+	topic.tracking.enable = true
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+	value.converter.plugin.version = null
+	worker.sync.timeout.ms = 3000
+	worker.unsync.backoff.ms = 300000
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:13,351] INFO Creating Kafka admin client (org.apache.kafka.connect.runtime.WorkerConfig:296)
+[2026-09-15 15:00:13,357] INFO AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	config.providers = []
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:13,477] INFO These configurations '[config.storage.topic, status.storage.topic, group.id, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:13,479] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:13,480] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:13,481] INFO Kafka startTimeMs: 1789477213478 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:13,878] INFO Kafka cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.connect.runtime.WorkerConfig:313)
+[2026-09-15 15:00:13,880] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:684)
+[2026-09-15 15:00:13,880] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:688)
+[2026-09-15 15:00:13,881] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:694)
+[2026-09-15 15:00:13,883] INFO App info kafka.admin.client for adminclient-1 unregistered (org.apache.kafka.common.utils.AppInfoParser:89)
+[2026-09-15 15:00:13,889] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:684)
+[2026-09-15 15:00:13,890] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:688)
+[2026-09-15 15:00:13,891] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:694)
+[2026-09-15 15:00:13,898] INFO PublicConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	admin.listeners = null
+	listeners = [http://:8083]
+	response.http.headers.config = 
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	topic.tracking.allow.reset = true
+	topic.tracking.enable = true
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,019] INFO Added connector for http://:8083 (org.apache.kafka.connect.runtime.rest.RestServer:126)
+[2026-09-15 15:00:14,020] INFO Initializing REST server (org.apache.kafka.connect.runtime.rest.RestServer:200)
+[2026-09-15 15:00:14,082] INFO jetty-12.0.34; built: 2026-04-01T05:45:03.823Z; git: 57e7adb250592bd15f573e7820be9b64632c6637; jvm 21.0.9+7-LTS-338 (org.eclipse.jetty.server.Server:555)
+[2026-09-15 15:00:14,122] INFO Started http_8083@5720fbe1{HTTP/1.1, (http/1.1)}{0.0.0.0:8083} (org.eclipse.jetty.server.AbstractConnector:326)
+[2026-09-15 15:00:14,126] INFO Started oejs.Server@77128dab{STARTING}[12.0.34,sto=60000] @5486ms (org.eclipse.jetty.server.Server:612)
+[2026-09-15 15:00:14,164] INFO Advertised URI: http://192.168.10.49:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:421)
+[2026-09-15 15:00:14,165] INFO REST server listening at http://192.168.10.49:8083/, advertising URL http://192.168.10.49:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:220)
+[2026-09-15 15:00:14,165] INFO Advertised URI: http://192.168.10.49:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:421)
+[2026-09-15 15:00:14,166] INFO REST admin endpoints at http://192.168.10.49:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:223)
+[2026-09-15 15:00:14,166] INFO Advertised URI: http://192.168.10.49:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:421)
+[2026-09-15 15:00:14,170] INFO Setting up All Policy for ConnectorClientConfigOverride. This will allow all client configurations to be overridden (org.apache.kafka.connect.connector.policy.AllConnectorClientConfigOverridePolicy:45)
+[2026-09-15 15:00:14,178] INFO JsonConverterConfig values: 
+	converter.type = key
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schema.content = null
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,191] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:14,191] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:14,192] INFO Kafka startTimeMs: 1789477214191 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:14,196] INFO JsonConverterConfig values: 
+	converter.type = key
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schema.content = null
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,197] INFO JsonConverterConfig values: 
+	converter.type = value
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schema.content = null
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,212] INFO Advertised URI: http://192.168.10.49:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:421)
+[2026-09-15 15:00:14,235] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:14,236] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:14,236] INFO Kafka startTimeMs: 1789477214235 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:14,238] INFO Kafka Connect worker initialization took 4212ms (org.apache.kafka.connect.cli.AbstractConnectCli:144)
+[2026-09-15 15:00:14,239] INFO Kafka Connect starting (org.apache.kafka.connect.runtime.Connect:67)
+[2026-09-15 15:00:14,240] INFO Initializing REST resources (org.apache.kafka.connect.runtime.rest.RestServer:227)
+[2026-09-15 15:00:14,241] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Herder starting (org.apache.kafka.connect.runtime.distributed.DistributedHerder:376)
+[2026-09-15 15:00:14,242] INFO Worker starting (org.apache.kafka.connect.runtime.Worker:235)
+[2026-09-15 15:00:14,243] INFO Starting KafkaOffsetBackingStore (org.apache.kafka.connect.storage.KafkaOffsetBackingStore:231)
+[2026-09-15 15:00:14,243] INFO Starting KafkaBasedLog with topic connect-offsets reportErrorsToCallback=false (org.apache.kafka.connect.util.KafkaBasedLog:225)
+[2026-09-15 15:00:14,244] INFO AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-shared-admin
+	config.providers = []
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,249] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, group.id, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:14,250] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:14,251] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:14,251] INFO Kafka startTimeMs: 1789477214250 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:14,281] INFO Adding admin resources to main listener (org.apache.kafka.connect.runtime.rest.RestServer:242)
+[2026-09-15 15:00:14,327] INFO Session workerName=node0 (org.eclipse.jetty.session.DefaultSessionIdManager:328)
+[2026-09-15 15:00:14,334] INFO Started oeje10s.ServletContextHandler@68c7ef83{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6145b81e{STARTED}} (org.eclipse.jetty.server.handler.ContextHandler:795)
+[2026-09-15 15:00:14,369] INFO Created topic (name=connect-offsets, numPartitions=25, replicationFactor=1, replicasAssignments=null, configs={cleanup.policy=compact}) on brokers at localhost:9092 (org.apache.kafka.connect.util.TopicAdmin:415)
+[2026-09-15 15:00:14,382] INFO ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-offsets
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,413] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector:270)
+[2026-09-15 15:00:14,465] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, group.id, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:14,466] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:14,467] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:14,467] INFO Kafka startTimeMs: 1789477214466 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:14,492] INFO [Producer clientId=connect-cluster-offsets] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:14,503] INFO ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-offsets
+	client.rack = 
+	config.providers = []
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-cluster
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	share.acquire.mode = BATCH_OPTIMIZED
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:14,524] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector:270)
+[2026-09-15 15:00:14,564] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] 
+****************************************************************
+* The consumer rebalance protocol (KIP-848) is production-ready!
+* Set the consumer configuration group.protocol=consumer to try it out.
+* See https://kafka.apache.org/documentation/#consumer_rebalance_protocol
+**************************************************************** (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer:221)
+[2026-09-15 15:00:14,596] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:14,596] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:14,597] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:14,597] INFO Kafka startTimeMs: 1789477214596 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:14,606] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:14,612] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Assigned to partition(s): connect-offsets-0, connect-offsets-1, connect-offsets-2, connect-offsets-3, connect-offsets-4, connect-offsets-5, connect-offsets-6, connect-offsets-7, connect-offsets-8, connect-offsets-9, connect-offsets-10, connect-offsets-11, connect-offsets-12, connect-offsets-13, connect-offsets-14, connect-offsets-15, connect-offsets-16, connect-offsets-17, connect-offsets-18, connect-offsets-19, connect-offsets-20, connect-offsets-21, connect-offsets-22, connect-offsets-23, connect-offsets-24 (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer:630)
+[2026-09-15 15:00:14,617] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-0 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,619] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-1 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,619] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-2 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,620] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-3 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,620] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-4 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,621] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-5 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,621] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-6 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,622] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-7 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,623] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-8 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,623] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-9 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,624] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-10 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,624] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-11 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,625] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-12 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,625] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-13 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,626] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-14 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,627] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-15 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,627] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-16 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,628] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-17 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,629] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-18 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,630] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-19 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,630] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-20 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,631] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-21 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,632] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-22 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,632] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-23 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,633] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-offsets-24 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:14,934] INFO Started oeje10s.ServletContextHandler@68c7ef83{ROOT,/,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@6145b81e{STARTED}} (org.eclipse.jetty.ee10.servlet.ServletContextHandler:1056)
+[2026-09-15 15:00:14,934] INFO REST resources initialized; server is started and ready to handle requests (org.apache.kafka.connect.runtime.rest.RestServer:308)
+[2026-09-15 15:00:14,935] INFO Kafka Connect started (org.apache.kafka.connect.runtime.Connect:77)
+[2026-09-15 15:00:15,041] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-10 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,042] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-8 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,043] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-14 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,044] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-12 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,044] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,045] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,045] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-6 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,046] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-4 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,046] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-24 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,047] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-18 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,047] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-16 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,048] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-22 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,048] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-20 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,048] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-9 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,049] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-7 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,049] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-13 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,049] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-11 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,050] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,050] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-5 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,051] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,051] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-23 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,051] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-17 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,052] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-15 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,052] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-21 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,052] INFO [Consumer clientId=connect-cluster-offsets, groupId=connect-cluster] Resetting offset for partition connect-offsets-19 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,053] INFO Finished reading KafkaBasedLog for topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:282)
+[2026-09-15 15:00:15,053] INFO Started KafkaBasedLog for topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:284)
+[2026-09-15 15:00:15,054] INFO Finished reading offsets topic and starting KafkaOffsetBackingStore (org.apache.kafka.connect.storage.KafkaOffsetBackingStore:248)
+[2026-09-15 15:00:15,055] INFO Worker started (org.apache.kafka.connect.runtime.Worker:245)
+[2026-09-15 15:00:15,056] INFO Starting KafkaBasedLog with topic connect-status reportErrorsToCallback=false (org.apache.kafka.connect.util.KafkaBasedLog:225)
+[2026-09-15 15:00:15,091] INFO Created topic (name=connect-status, numPartitions=5, replicationFactor=1, replicasAssignments=null, configs={cleanup.policy=compact}) on brokers at localhost:9092 (org.apache.kafka.connect.util.TopicAdmin:415)
+[2026-09-15 15:00:15,092] INFO ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-statuses
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:15,093] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector:270)
+[2026-09-15 15:00:15,099] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, group.id, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:15,099] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:15,100] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:15,101] INFO Kafka startTimeMs: 1789477215099 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:15,103] INFO ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-statuses
+	client.rack = 
+	config.providers = []
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-cluster
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	share.acquire.mode = BATCH_OPTIMIZED
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:15,104] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector:270)
+[2026-09-15 15:00:15,105] INFO [Producer clientId=connect-cluster-statuses] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:15,112] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] 
+****************************************************************
+* The consumer rebalance protocol (KIP-848) is production-ready!
+* Set the consumer configuration group.protocol=consumer to try it out.
+* See https://kafka.apache.org/documentation/#consumer_rebalance_protocol
+**************************************************************** (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer:221)
+[2026-09-15 15:00:15,117] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:15,118] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:15,118] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:15,119] INFO Kafka startTimeMs: 1789477215117 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:15,126] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:15,127] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Assigned to partition(s): connect-status-0, connect-status-1, connect-status-2, connect-status-3, connect-status-4 (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer:630)
+[2026-09-15 15:00:15,129] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-status-0 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:15,129] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-status-1 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:15,130] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-status-2 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:15,130] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-status-3 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:15,131] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-status-4 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:15,268] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Resetting offset for partition connect-status-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,269] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Resetting offset for partition connect-status-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,270] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Resetting offset for partition connect-status-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,271] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Resetting offset for partition connect-status-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,272] INFO [Consumer clientId=connect-cluster-statuses, groupId=connect-cluster] Resetting offset for partition connect-status-4 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,272] INFO Finished reading KafkaBasedLog for topic connect-status (org.apache.kafka.connect.util.KafkaBasedLog:282)
+[2026-09-15 15:00:15,273] INFO Started KafkaBasedLog for topic connect-status (org.apache.kafka.connect.util.KafkaBasedLog:284)
+[2026-09-15 15:00:15,277] INFO Starting KafkaConfigBackingStore (org.apache.kafka.connect.storage.KafkaConfigBackingStore:376)
+[2026-09-15 15:00:15,277] INFO Starting KafkaBasedLog with topic connect-configs reportErrorsToCallback=false (org.apache.kafka.connect.util.KafkaBasedLog:225)
+[2026-09-15 15:00:15,309] INFO Created topic (name=connect-configs, numPartitions=1, replicationFactor=1, replicasAssignments=null, configs={cleanup.policy=compact}) on brokers at localhost:9092 (org.apache.kafka.connect.util.TopicAdmin:415)
+[2026-09-15 15:00:15,310] INFO ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-configs
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	config.providers = []
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 2147483647
+	enable.idempotence = false
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:15,311] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector:270)
+[2026-09-15 15:00:15,317] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, group.id, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:15,318] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:15,319] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:15,319] INFO Kafka startTimeMs: 1789477215318 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:15,321] INFO ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = connect-cluster-configs
+	client.rack = 
+	config.providers = []
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-cluster
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = []
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	share.acquire.mode = BATCH_OPTIMIZED
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = []
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.common.config.AbstractConfig:384)
+[2026-09-15 15:00:15,322] INFO [Producer clientId=connect-cluster-configs] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:15,322] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector:270)
+[2026-09-15 15:00:15,329] INFO [Consumer clientId=connect-cluster-configs, groupId=connect-cluster] 
+****************************************************************
+* The consumer rebalance protocol (KIP-848) is production-ready!
+* Set the consumer configuration group.protocol=consumer to try it out.
+* See https://kafka.apache.org/documentation/#consumer_rebalance_protocol
+**************************************************************** (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer:221)
+[2026-09-15 15:00:15,331] INFO These configurations '[config.storage.topic, metrics.context.connect.group.id, status.storage.topic, config.storage.replication.factor, offset.flush.interval.ms, key.converter.schemas.enable, metrics.context.connect.kafka.cluster.id, status.storage.replication.factor, value.converter.schemas.enable, offset.storage.replication.factor, offset.storage.topic, value.converter, key.converter]' were supplied but are not used yet. (org.apache.kafka.common.config.AbstractConfig:393)
+[2026-09-15 15:00:15,331] INFO Kafka version: 4.3.1 (org.apache.kafka.common.utils.AppInfoParser:138)
+[2026-09-15 15:00:15,332] INFO Kafka commitId: 26b251a451ce941d (org.apache.kafka.common.utils.AppInfoParser:139)
+[2026-09-15 15:00:15,332] INFO Kafka startTimeMs: 1789477215331 (org.apache.kafka.common.utils.AppInfoParser:140)
+[2026-09-15 15:00:15,336] INFO [Consumer clientId=connect-cluster-configs, groupId=connect-cluster] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:15,338] INFO [Consumer clientId=connect-cluster-configs, groupId=connect-cluster] Assigned to partition(s): connect-configs-0 (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer:630)
+[2026-09-15 15:00:15,338] INFO [Consumer clientId=connect-cluster-configs, groupId=connect-cluster] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition connect-configs-0 (org.apache.kafka.clients.consumer.internals.SubscriptionState:802)
+[2026-09-15 15:00:15,347] INFO [Consumer clientId=connect-cluster-configs, groupId=connect-cluster] Resetting offset for partition connect-configs-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:458)
+[2026-09-15 15:00:15,347] INFO Finished reading KafkaBasedLog for topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:282)
+[2026-09-15 15:00:15,348] INFO Started KafkaBasedLog for topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:284)
+[2026-09-15 15:00:15,348] INFO Started KafkaConfigBackingStore (org.apache.kafka.connect.storage.KafkaConfigBackingStore:400)
+[2026-09-15 15:00:15,354] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Cluster ID: IN9zP08ZQWOhZEY6gy6xfQ (org.apache.kafka.clients.Metadata:365)
+[2026-09-15 15:00:15,358] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:943)
+[2026-09-15 15:00:15,360] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Rebalance started (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:239)
+[2026-09-15 15:00:15,360] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] (Re-)joining group (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:611)
+[2026-09-15 15:00:15,369] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] (Re-)joining group (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:611)
+[2026-09-15 15:00:18,385] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Successfully joined group with generation Generation{generationId=1, memberId='connect-192.168.10.49:8083-d2102a5f-f274-4e4b-9a5d-1329b926ddfd', protocol='sessioned'} (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:672)
+[2026-09-15 15:00:18,399] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Successfully synced group in generation Generation{generationId=1, memberId='connect-192.168.10.49:8083-d2102a5f-f274-4e4b-9a5d-1329b926ddfd', protocol='sessioned'} (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:849)
+[2026-09-15 15:00:18,406] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Joined group at generation 1 with protocol version 2 and got assignment: Assignment{error=0, leader='connect-192.168.10.49:8083-d2102a5f-f274-4e4b-9a5d-1329b926ddfd', leaderUrl='http://192.168.10.49:8083/', offset=-1, connectorIds=[], taskIds=[], revokedConnectorIds=[], revokedTaskIds=[], delay=0} with rebalance delay: 0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:2626)
+[2026-09-15 15:00:18,407] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Herder started (org.apache.kafka.connect.runtime.distributed.DistributedHerder:388)
+[2026-09-15 15:00:18,408] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Starting connectors and tasks using config offset -1 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1960)
+[2026-09-15 15:00:18,408] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Finished starting connectors and tasks (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1989)
+[2026-09-15 15:00:18,474] INFO [Worker clientId=connect-192.168.10.49:8083, groupId=connect-cluster] Session key updated (org.apache.kafka.connect.runtime.distributed.DistributedHerder:2490)
+[2026-09-15 15:00:20,554] INFO 127.0.0.1 - - [15/Sept/2026:13:00:20 +0000] "GET /connector-plugins HTTP/1.1" 200 508 "" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-GB) WindowsPowerShell/5.1.26100.9444" 133 (org.apache.kafka.connect.runtime.rest.RestServer:57)
+[2026-09-15 15:10:14,352] INFO [AdminClient clientId=connect-cluster-shared-admin] Rebootstrapping with Cluster(id = null, nodes = [localhost:9092 (id: -1 rack: null isFenced: false)], partitions = [], controller = null) (org.apache.kafka.clients.admin.internals.AdminMetadataManager:329)
+[2026-09-15 15:14:21,884] INFO [0:0:0:0:0:0:0:1] - - [15/Sept/2026:13:14:21 +0000] "GET /connector-plugins HTTP/1.1" 200 508 "" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9444" 53 (org.apache.kafka.connect.runtime.rest.RestServer:57)
+[2026-09-15 15:14:21,972] INFO [0:0:0:0:0:0:0:1] - - [15/Sept/2026:13:14:21 +0000] "GET /connectors?expand=status HTTP/1.1" 200 2 "" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9444" 40 (org.apache.kafka.connect.runtime.rest.RestServer:57)
+[2026-09-15 15:20:14,510] INFO [AdminClient clientId=connect-cluster-shared-admin] Rebootstrapping with Cluster(id = null, nodes = [localhost:9092 (id: -1 rack: null isFenced: false)], partitions = [], controller = null) (org.apache.kafka.clients.admin.internals.AdminMetadataManager:329)

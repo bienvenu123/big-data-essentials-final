@@ -1,0 +1,20 @@
+{
+  "name": "telecom-hdfs-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.hdfs.HdfsSinkConnector",
+    "tasks.max": "1",
+    "topics": "telecom.events",
+    "hdfs.url": "hdfs://localhost:9000",
+    "flush.size": "100",
+    "topics.dir": "/telecom/events",
+    "format.class": "io.confluent.connect.hdfs.json.JsonFormat",
+    "partitioner.class": "io.confluent.connect.storage.partitioner.TimeBasedPartitioner",
+    "path.format": "'year='YYYY/'month='MM/'day='dd",
+    "partition.duration.ms": "86400000",
+    "locale": "en",
+    "timezone": "UTC",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}
