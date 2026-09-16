@@ -38,7 +38,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--seed", required=True, help="Path to Dataset1_Telecommunications.xlsx")
     parser.add_argument("--rate", type=float, default=10, help="Events per second")
-    parser.add_argument("--ingest-url", default="http://localhost:8000/api/events/", help="Django REST ingestion endpoint")
+    parser.add_argument("--ingest-url", default="http://127.0.0.1:8000/api/events/", help="Django REST ingestion endpoint")
     parser.add_argument("--count", type=int, default=0, help="0 means run until interrupted")
     args = parser.parse_args()
     if args.rate <= 0:

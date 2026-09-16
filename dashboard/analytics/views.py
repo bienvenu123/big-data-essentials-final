@@ -1,5 +1,6 @@
 import json
 import os
+from threading import Lock
 
 from confluent_kafka import Producer
 from django.db import connection
@@ -8,6 +9,24 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .serializers import TelecomEventSerializer
+
+
+# Creating a Kafka producer opens broker connections and performs metadata
+# discovery.  Keep one per Django process so the generator can sustain its
+# configured rate instead of reconnecting for every POST request.
+_producer = None
+_producer_lock = Lock()
+
+
+def kafka_producer() -> Producer:
+    global _producer
+    if _producer is None:
+        _producer = Producer({
+            "bootstrap.servers": os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092"),
+            "acks": "all",
+            "enable.idempotence": True,
+        })
+    return _producer
 
 
 def overview(request):
@@ -45,11 +64,15 @@ def overview(request):
             usage_by_service = cursor.fetchall()
     except Exception as exc:
         metrics["analytics_message"] = f"Spark analytics are not loaded yet: {exc}"
-    return render(request, "analytics/overview.html", {
+    response = render(request, "analytics/overview.html", {
         "metrics": metrics, "recent": recent, "alerts": alerts, "segments": segments,
         "event_volume": event_volume, "payment_failure_rate": payment_failure_rate,
         "usage_by_service": usage_by_service,
     })
+    # Ensure each browser refresh retrieves current MySQL operational values.
+    response["Cache-Control"] = "no-store, max-age=0"
+    response["Pragma"] = "no-cache"
+    return response
 
 
 @api_view(["POST"])
@@ -61,18 +84,14 @@ def ingest_event(request):
     # DateTimeField/UUIDField return Python objects; convert them to JSON-safe values.
     record["event_id"] = str(record["event_id"])
     record["event_time"] = record["event_time"].isoformat()
-    delivery_error = []
-
-    def delivery_report(error, _message):
-        if error is not None:
-            delivery_error.append(str(error))
-
-    producer = Producer({"bootstrap.servers": os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092"), "acks": "all", "enable.idempotence": True})
     try:
-        producer.produce("telecom.events", key=str(record["customer_id"]), value=json.dumps(record).encode(), on_delivery=delivery_report)
-        outstanding = producer.flush(10)
+        # HTTP 202 means accepted for asynchronous processing.  The shared,
+        # idempotent producer delivers in the background; waiting for a flush
+        # here would make every generated event block on a broker round-trip.
+        with _producer_lock:
+            producer = kafka_producer()
+            producer.poll(0)
+            producer.produce("telecom.events", key=str(record["customer_id"]), value=json.dumps(record).encode())
     except BufferError as exc:
         return Response({"error": f"Kafka producer queue is full: {exc}"}, status=503)
-    if outstanding or delivery_error:
-        return Response({"error": "Kafka delivery failed", "detail": delivery_error}, status=503)
     return Response({"status": "accepted", "event_id": record["event_id"]}, status=202)
