@@ -94,4 +94,4 @@ def ingest_event(request):
             producer.produce("telecom.events", key=str(record["customer_id"]), value=json.dumps(record).encode())
     except BufferError as exc:
         return Response({"error": f"Kafka producer queue is full: {exc}"}, status=503)
-    return Response({"status": "accepted", "event_id": record["event_id"]}, status=202)
+    return Response({"status": "accepted", "event_type": record["event_type"], "event_id": record["event_id"]}, status=202)

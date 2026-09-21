@@ -1,0 +1,208 @@
+# Telecom project: command notebook (PowerShell)
+#
+# Use one PowerShell terminal for each item marked "KEEP RUNNING".
+# Run commands from this project's root folder:
+# C:\Users\HP\Videos\exam
+#
+# This is a guide: copy one section at a time. Do not paste the entire file
+# into a terminal at once.
+
+
+###############################################################################
+# 0. FIRST-TIME PROJECT SETUP
+###############################################################################
+
+# Create the private environment file once. Edit it afterwards and supply your
+# real MySQL password and Django secret. Do not commit .env to Git.
+Copy-Item .env.example .env
+notepad .env
+
+# Create and activate the Python virtual environment (only create it once).
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+
+# Put the supplied Excel workbook here:
+# data\Dataset1_Telecommunications.xlsx
+
+
+###############################################################################
+# 1. JAVA 21 FOR KAFKA COMMANDS
+###############################################################################
+
+# Run these two lines in EVERY NEW PowerShell terminal that will run a Kafka
+# .bat command. Kafka 4.x needs Java 17 or newer; this machine uses Java 21.
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-21"
+$env:Path = "$env:JAVA_HOME\bin;$env:Path"
+java -version
+
+
+###############################################################################
+# 2. MYSQL: CREATE THE DATABASE AND APPLICATION USER (FIRST TIME ONLY)
+###############################################################################
+
+# Open MySQL as an administrator. It will ask for the MySQL root password.
+mysql -u root -p
+
+# Inside the MySQL prompt, replace your-local-password with the password saved
+# in .env, then run these SQL statements:
+CREATE DATABASE essentials;
+CREATE USER 'telecom_app'@'localhost' IDENTIFIED BY 'your-local-password';
+GRANT ALL PRIVILEGES ON essentials.* TO 'telecom_app'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+
+###############################################################################
+# 3. HDFS (RUN IN WSL/UBUNTU)
+###############################################################################
+
+# Start HDFS after it has been installed and configured in pseudo-distributed
+# mode. Format the NameNode ONLY ONCE on a brand-new HDFS installation.
+# hdfs namenode -format
+start-dfs.sh
+
+# Create the project folders once, then verify them.
+hdfs dfs -mkdir -p /telecom/events /telecom/analytics /telecom/models
+hdfs dfs -ls /
+
+
+###############################################################################
+# 4. KAFKA BROKER (KEEP RUNNING IN ITS OWN TERMINAL)
+###############################################################################
+
+# If your Kafka broker is not already running, start the already-formatted
+# local broker. Do not run this when another broker is listening on port 9092.
+C:\kafka\bin\windows\kafka-server-start.bat C:\kafka\config\server.properties
+
+
+###############################################################################
+# 5. CREATE AND INSPECT THE APPLICATION TOPIC
+###############################################################################
+
+# Create telecom.events once. It has 3 partitions and one replica because the
+# local setup has one Kafka broker.
+C:\kafka\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --if-not-exists --topic telecom.events --partitions 3 --replication-factor 1
+
+# Show the topic's partitions, leader, replicas, and in-sync replicas.
+C:\kafka\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic telecom.events
+
+# List every topic.
+C:\kafka\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+
+###############################################################################
+# 6. KAFKA CONNECT (KEEP RUNNING IN ITS OWN TERMINAL)
+###############################################################################
+
+# Kafka Connect requires the Confluent JDBC Sink and HDFS Sink connector JARs
+# in its configured plugin.path, and the worker needs MYSQL_USER / MYSQL_PASSWORD
+# environment variables. Start the worker using your configured worker file.
+# Example if Kafka is installed at C:\kafka:
+C:\kafka\bin\windows\connect-distributed.bat C:\kafka\config\connect-distributed.properties
+
+# In another terminal, register the two connectors. Run from the project root.
+# They create/read their own consumer groups and move Kafka events to MySQL/HDFS.
+Invoke-RestMethod -Method Post -Uri http://localhost:8083/connectors -ContentType 'application/json' -InFile connect\mysql-sink.json
+Invoke-RestMethod -Method Post -Uri http://localhost:8083/connectors -ContentType 'application/json' -InFile connect\hdfs-sink.json
+
+# View connector health and task status.
+Invoke-RestMethod http://localhost:8083/connectors?expand=status
+
+
+###############################################################################
+# 7. DJANGO API + DASHBOARD (KEEP RUNNING IN ITS OWN TERMINAL)
+###############################################################################
+
+.\.venv\Scripts\Activate.ps1
+python dashboard\manage.py runserver
+
+# Open the dashboard in a browser:
+# http://127.0.0.1:8000/
+# The dashboard refreshes every 10 seconds.
+
+
+###############################################################################
+# 8. FAKE EVENT GENERATOR (KEEP RUNNING IN ITS OWN TERMINAL)
+###############################################################################
+
+# This reads the Excel customer seed file, generates random telecom activity,
+# posts it to the Django API, and Django produces it to Kafka.
+.\.venv\Scripts\Activate.ps1
+python src\generator\telecom_event_generator.py --seed data\Dataset1_Telecommunications.xlsx --rate 20
+
+
+###############################################################################
+# 9. CUSTOM KAFKA CONSUMERS (KEEP EACH RUNNING IN A DIFFERENT TERMINAL)
+###############################################################################
+
+# These consumers share the telecom-operations-v1 group. Kafka distributes the
+# three topic partitions among them. They create/update the operational MySQL
+# tables: customer_operations, billing_alerts, and processed_events.
+.\.venv\Scripts\Activate.ps1
+python src\consumer\operational_consumer.py --name consumer-a
+
+# Run this in a second terminal:
+.\.venv\Scripts\Activate.ps1
+python src\consumer\operational_consumer.py --name consumer-b
+
+
+###############################################################################
+# 10. INSPECT KAFKA EVENTS, CONSUMERS, AND LAG
+###############################################################################
+
+# Print events from the beginning. Ctrl+C stops this viewer.
+C:\kafka\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic telecom.events --from-beginning --property print.key=true --property key.separator=" | "
+
+# List Kafka consumer groups.
+C:\kafka\bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --list
+
+# Show the application consumers, partition assignment, and membership.
+C:\kafka\bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group telecom-operations-v1 --members --verbose
+
+# Show offsets and per-partition consumer lag.
+C:\kafka\bin\windows\kafka-consumer-groups.bat --bootstrap-server localhost:9092 --describe --group telecom-operations-v1
+
+
+###############################################################################
+# 11. RUN SPARK BATCH ANALYTICS AND MODEL TRAINING
+###############################################################################
+
+# These need Spark, Java, HDFS configuration, and the MySQL Connector/J package.
+# Batch analytics reads HDFS event history and writes MySQL dashboard tables.
+spark-submit --packages com.mysql:mysql-connector-j:8.4.0 spark\batch_insights.py
+
+# Train the K-Means (k=4) customer-segmentation model from HDFS history.
+spark-submit --packages com.mysql:mysql-connector-j:8.4.0 spark\train_segmenter.py
+
+# Score events after a chosen UTC cutoff using the saved K-Means model.
+spark-submit --packages com.mysql:mysql-connector-j:8.4.0 spark\score_new_activity.py --cutoff 2026-09-20T00:00:00+00:00
+
+# Optional: rerun batch analytics every 60 seconds in a separate PowerShell window.
+.\spark\refresh_batch_insights.ps1 -IntervalSeconds 60
+
+
+###############################################################################
+# 12. VERIFY HDFS AND MYSQL OUTPUTS
+###############################################################################
+
+# Run in WSL/Ubuntu. Confirm Kafka Connect wrote history and Spark wrote outputs.
+hdfs dfs -ls -R /telecom/events
+hdfs dfs -ls -R /telecom/analytics
+hdfs dfs -ls -R /telecom/models
+
+# Open MySQL and list the tables used by the dashboard.
+mysql -u telecom_app -p essentials
+SHOW TABLES;
+SELECT * FROM customer_operations LIMIT 10;
+SELECT * FROM billing_alerts ORDER BY created_at DESC LIMIT 10;
+SELECT * FROM customer_segment_scores LIMIT 10;
+EXIT;
+
+
+###############################################################################
+# 13. OPTIONAL: KEEP A SPARK UI JOB VISIBLE (KEEP RUNNING)
+###############################################################################
+
+# Run this while demonstrating the Spark UI, then open http://localhost:4040.
+spark-submit spark\ui_demo.py
